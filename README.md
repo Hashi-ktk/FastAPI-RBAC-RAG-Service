@@ -1,10 +1,10 @@
-## Overview
+# Overview
 
-This project is a FastAPI microservice that implements secure login for both admin and user roles, utilizing dynamic Role-Based Access Control (RBAC) through the Oso framework. It also integrates Retrieval-Augmented Generation (RAG) for enhanced question-answering capabilities using OpenAI's GPT models.
+This project is a FastAPI microservice that provides secure login functionality for both admin and user roles, leveraging dynamic Role-Based Access Control (RBAC) through the Oso framework. Additionally, it integrates Retrieval-Augmented Generation (RAG) for enhanced question-answering capabilities using OpenAI's GPT models. The service also supports PDF document uploads, text extraction, and embedding generation for advanced querying.
 
 ## Postman Collection
 
-A Postman collection is provided to test the API endpoints. You can find the collection file at:
+A Postman collection is included to test the API endpoints. You can find the collection file at:
 
 ```
 Postman Collection/fastapi-rbac-microservice.postman_collection.json
@@ -23,6 +23,14 @@ Before running the application, ensure you have the following installed:
 - Python 3.8 or higher
 - pip (Python package manager)
 - A database (SQLite is used by default, but you can configure another database in the `.env` file)
+
+## Features
+
+- **Secure Authentication**: Supports JWT-based authentication for users and admins.
+- **Role-Based Access Control (RBAC)**: Implements dynamic RBAC using the Oso framework.
+- **Retrieval-Augmented Generation (RAG)**: Integrates OpenAI's GPT models for question-answering with context from uploaded documents.
+- **PDF Upload and Processing**: Allows admins to upload PDFs, extract text, generate embeddings, and save them for querying.
+- **Modular Architecture**: Designed for easy maintenance and scalability.
 
 ## Database Initialization
 
@@ -72,14 +80,6 @@ The API documentation is automatically generated and available at:
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
 These provide detailed information about the available endpoints, request/response formats, and authentication requirements.
-This project is a FastAPI microservice that implements secure login for both admin and user roles, utilizing dynamic Role-Based Access Control (RBAC) through the Oso framework.
-
-## Features
-
-- Secure authentication for users and admins
-- Role-Based Access Control (RBAC) using Oso
-- JWT-based authentication
-- Modular structure for easy maintenance and scalability
 
 ## Project Structure
 
@@ -103,11 +103,13 @@ fastapi-rbac-microservice
 │   │   ├── models.py
 │   │   ├── routes.py
 │   │   └── schemas.py
-│   └── admin
-│       ├── __init__.py
-│       ├── models.py
-│       ├── routes.py
-│       └── schemas.py
+│   ├── admin
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── routes.py
+│   │   └── schemas.py
+│   └── services
+│       ├── embedding_service.py
 ├── requirements.txt
 ├── .env
 └── README.md
@@ -143,11 +145,10 @@ uvicorn app.main:app --reload
 
 You can access the API documentation at `http://127.0.0.1:8000/docs`.
 
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the LICENSE file for more details.# Overview
