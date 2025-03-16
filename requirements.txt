@@ -1,0 +1,14 @@
+FastAPI
+uvicorn
+oso
+python-jose
+pydantic
+sqlalchemy
+databases
+passlib[bcrypt]
+dotenv
+jwt
+python-multipart
+faiss-cpu 
+openai 
+PyPDF2
