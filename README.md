@@ -64,16 +64,6 @@ OPENAI_API_KEY=your_openai_api_key
 
 Replace `your_secret_key` and `your_openai_api_key` with your actual values.
 
-## Testing
-
-To run the tests, use the following command:
-
-```
-pytest
-```
-
-Ensure you have the `pytest` package installed before running the tests.
-
 ## API Documentation
 
 The API documentation is automatically generated and available at:
