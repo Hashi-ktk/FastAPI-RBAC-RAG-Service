@@ -6,7 +6,7 @@ from app.users import models, schemas
 from app.auth.dependencies import get_db, get_current_user
 from app.auth.utils import hash_password
 from fastapi import UploadFile, File
-from app.services.embedding_service import extract_text_from_pdf, generate_embeddings, save_embeddings_to_faiss
+from app.ai_microservice.embedding_service import extract_text_from_pdf, generate_embeddings, save_embeddings_to_faiss
 
 router = APIRouter()
 
